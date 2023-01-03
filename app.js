@@ -5,7 +5,7 @@ const port = 3000
 //Mongoose
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
-mongoose.connect('mongodb+srv://mongoose:test@cluster0.ir5gjii.mongodb.net/shopping_cart?retryWrites=true&w=majority')
+mongoose.connect('Link of database here')
 .then(() => app.listen(port, () => {
   console.log(`Example app listening on port ${port}`); 
 })).catch(() => console.log("database connection error"))
