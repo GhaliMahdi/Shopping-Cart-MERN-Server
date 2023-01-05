@@ -4,6 +4,7 @@ const app = express()
 const port = 3000
 const mongoose = require('mongoose');
 
+const { getProductsController } = require('./controllers/getProductsController');
 const { createProductController } = require("./controllers/createProductController");
 mongoose.set('strictQuery', false);
 mongoose.connect('Link of database here')
@@ -19,6 +20,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/products", createProductController);
+app.get("/products", getProductsController);
 
 mongoose.set('strictQuery', false);
 mongoose.connect('mongodb+srv://mongoose:test@cluster0.ir5gjii.mongodb.net/shopping_cart?retryWrites=true&w=majority')
