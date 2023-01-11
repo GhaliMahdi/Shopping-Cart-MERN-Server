@@ -1,7 +1,9 @@
 const {UserModel} = require('../models/UserModel')
 
 const jwt = require("jsonwebtoken");
-exports.secretString = "secret-password"
+secretString = "secret-password";
+exports.secretString = "secret-password";
+
 exports.loginController = async (req, res) => {
     const userInDb = await UserModel.findOne({
         username: req.body.username,
