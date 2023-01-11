@@ -1,7 +1,7 @@
 const {UserModel} = require('../models/UserModel')
 
 const jwt = require("jsonwebtoken");
-
+exports.secretString = "secret-password"
 exports.loginController = async (req, res) => {
     const userInDb = await UserModel.findOne({
         username: req.body.username,
@@ -11,9 +11,11 @@ exports.loginController = async (req, res) => {
     if (!userInDb) {
         res.status(401).send("Invalid login.");
     } else {
-        const token = jwt.sign(userInDb.toObject(), "secret-password");
+        const userObject = userInDb.toObject();
+        delete userObject.password;
+        const token = jwt.sign(userObject, secretString);
         res.json({
-            user:userInDb, 
+            user:userObject, 
             token
         });
     }

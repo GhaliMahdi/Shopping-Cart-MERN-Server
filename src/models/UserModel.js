@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 //Schemas
 const UserSchema = new Schema({
     username: String,
-    password: String
+    password: String,
+    role: String,
   });
   
   //Models
