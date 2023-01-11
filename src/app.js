@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const { getProductsController } = require('./controllers/getProductsController');
 const { createProductController } = require("./controllers/createProductController");
+const { registerController } = require('./controllers/registerController');
 mongoose.set('strictQuery', false);
 mongoose.connect('Link of database here')
 .then(() => app.listen(port, () => {
@@ -21,6 +22,7 @@ app.use(express.json());
 
 app.post("/products", createProductController);
 app.get("/products", getProductsController);
+app.post("/register", registerController);
 
 mongoose.set('strictQuery', false);
 mongoose.connect('mongodb+srv://mongoose:test@cluster0.ir5gjii.mongodb.net/shopping_cart?retryWrites=true&w=majority')

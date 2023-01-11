@@ -1,5 +1,3 @@
-
-
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -14,4 +12,4 @@ const ProductSchema = new Schema({
   //Models
 const ProductModel = mongoose.model('Product', ProductSchema);
 
-exports.ProductModel = ProductModel
+exports.ProductModel = ProductModel;
