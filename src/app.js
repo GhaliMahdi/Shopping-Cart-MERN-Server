@@ -9,6 +9,7 @@ const { createProductController } = require("./controllers/createProductControll
 const { registerController } = require('./controllers/registerController');
 const { loginController } = require('./controllers/loginController');
 const { getProductController } = require('./controllers/getProductController');
+const { updateProductController } = require('./controllers/updateProductController');
 
 mongoose.set('strictQuery', false);
 mongoose.connect('Link of database here')
@@ -33,6 +34,11 @@ app.post("/login", loginController);
 
 app.get("/products", getProductsController);
 app.get("/products/:productId", getProductController);
+
+
+
+app.patch("/products/:productId", updateProductController);
+
 
 
 mongoose.set('strictQuery', false);
